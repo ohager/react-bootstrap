@@ -6,7 +6,7 @@ This project uses
 - react, for component driven Web UI
 - react-router , for React-based routing
 - event-emitter, as event system
-- q, as
+- q, as promise API
 - jquery, just as dependency, or if you really need it
 - jquery.inputmask, jquery plugin for input masking
 

@@ -1,6 +1,9 @@
 define(['react'],
     function (React) {
 
+
+
+
         return React.createClass({
 
             mixins: [React.addons.LinkedStateMixin],
@@ -9,6 +12,24 @@ define(['react'],
             getInitialState: function () {
                 return {rows: 50, columns: 20, randomColors: false}
             },
+
+            componentWillMount : function(){
+
+            },
+
+            componentDidMount : function(){
+
+            },
+
+            componentWillUpdate : function(){
+
+            },
+
+            componentWillUpdate : function(){
+
+            },
+
+
 
             changeRandomColors : function(event){
                 this.setState({randomColors : event.target.checked});

@@ -31,7 +31,7 @@ define([
                             <div className="col-xs-8 col-sm-8">
                                 <form>
                                     <input className="form-control" type="text" placeholder="Type here" valueLink={this.linkState("text")}/>
-                                    <button className="btn btn-success" onClick={this.onSubmit}>Submit</button>
+                                    <input type="button" className="btn btn-success" onClick={this.onSubmit}>Submit</input>
                                 </form>
                             </div>
                         </div>

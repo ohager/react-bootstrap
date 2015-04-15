@@ -52,8 +52,19 @@ define(['react', 'reactrouter'], function (React, Router) {
                                       <MenuItem link="twoway" title="2-Way Binding" />
                                       <MenuItem link="notification" title="Notifications" />
                                       <MenuItem link="thousands" title="Thousands" />
+									  <MenuItem link="composition" title="Composition" />
+									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
+
                                 </ul>
                               </li>
+								<li className="dropdown">
+									<a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+										<span className= "glyphicon glyphicon-fire" aria-hidden="true"></span> Promises <span className="caret"></span></a>
+									<ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
+										<MenuItem link="q" title="Q" />
+										<MenuItem link="harmony" title="Native Promises" />
+									</ul>
+								</li>
 							</ul>
 						</div>
 					</div>
