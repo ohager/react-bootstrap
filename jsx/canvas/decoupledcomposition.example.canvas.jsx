@@ -1,8 +1,9 @@
 define([
         'react',
-        'common/event'
+        'common/event',
+        'common/messagehandler'
     ],
-    function (React, $event) {
+    function (React, $event, $messageHandler) {
 
 
         var SearchBox = React.createClass(
@@ -38,12 +39,13 @@ define([
 
             propTypes: {
                 name: React.PropTypes.string.isRequired,
-                email: React.PropTypes.string
+                email: React.PropTypes.string,
+                onClick : React.PropTypes.func
             },
 
             render: function () {
                 return (
-                    <a href="#" className="list-group-item">
+                    <a className="list-group-item" onClick={this.props.onClick}>
                         <h4 className="list-group-item-heading">{this.props.name}</h4>
                         <small>
                             <span className="glyphicon glyphicon-envelope" aria-hidden="true"></span>
@@ -103,14 +105,18 @@ define([
 
             },
 
+            onItemClicked : function(index){
+              console.log(JSON.stringify(this.state.customers[index]));
+            },
+
             render: function () {
 
                 var customerCards = this.state.customers.length === 0 ?
                     <h4>Please, search for items!</h4>
                     :
                     this.state.customers.map(function (customer, index) {
-                        return <CustomerCard key={index} name={customer.name} email={customer.email}/>;
-                    });
+                        return <CustomerCard key={index} name={customer.name} email={customer.email} onClick={this.onItemClicked.bind(this, index)}/>;
+                    }, this);
 
                 return (
                     <div className="panel panel-default">
