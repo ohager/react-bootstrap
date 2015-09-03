@@ -4,6 +4,10 @@
   "description": "React/RequireJS Bootstrap",
   "main": "build.js",
   "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-run": "^1.6.10",
+    "gulp-run-sequence": "^0.3.2",
     "react-tools": "^0.13.3"
   },
   "scripts": {
