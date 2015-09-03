@@ -1,70 +1,72 @@
-define(['react', 'common/event'],
-	function (React, $event) {
+define(function (require) {
 
-		return React.createClass({
+    var React = require('react');
+    var $event = require('common/event');
 
-				_timeoutId : 0,
+    return React.createClass({
 
-				getInitialState: function () {
-					return { message : null, type : null, secondsToVanish : 0 }
-				},
+            _timeoutId: 0,
 
-				componentDidMount : function(){
-					$event.addListener('show-notification', this.showNotification);
-				},
+            getInitialState: function () {
+                return {message: null, type: null, secondsToVanish: 0}
+            },
 
-				componentWillUnmount : function(){
-					$event.removeListener('show-notification', this.showNotification);
-					this.cancelVanish();
-				},
+            componentDidMount: function () {
+                $event.addListener('show-notification', this.showNotification);
+            },
 
-				isVisible : function(){
-					return this.state.message && this.state.type;
-				},
+            componentWillUnmount: function () {
+                $event.removeListener('show-notification', this.showNotification);
+                this.cancelVanish();
+            },
 
-				hide : function(){
-					this.setState({
-						type : null,
-						message : null,
-						secondsToVanish : 0
-					});
-				},
+            isVisible: function () {
+                return this.state.message && this.state.type;
+            },
 
-				startVanishing : function(){
-					if(this.isVisible() && this.state.secondsToVanish > 0){
-						this.cancelVanish();
-						this._timeoutId = setTimeout(this.hide, this.state.secondsToVanish *  1000);
-					}
-				},
+            hide: function () {
+                this.setState({
+                    type: null,
+                    message: null,
+                    secondsToVanish: 0
+                });
+            },
 
-				cancelVanish : function(){
-					if(this._timeoutId > 0) {
-						clearTimeout(this._timeoutId);
-					}
-				},
+            startVanishing: function () {
+                if (this.isVisible() && this.state.secondsToVanish > 0) {
+                    this.cancelVanish();
+                    this._timeoutId = setTimeout(this.hide, this.state.secondsToVanish * 1000);
+                }
+            },
 
-				showNotification : function(notification){
-					this.setState({
-						type : notification.type,
-						message : notification.message,
-						secondsToVanish : notification.secondsToVanish
-					});
-					this.startVanishing();
-				},
+            cancelVanish: function () {
+                if (this._timeoutId > 0) {
+                    clearTimeout(this._timeoutId);
+                }
+            },
 
-				render: function () {
+            showNotification: function (notification) {
+                this.setState({
+                    type: notification.type,
+                    message: notification.message,
+                    secondsToVanish: notification.secondsToVanish
+                });
+                this.startVanishing();
+            },
 
-					return !this.isVisible() ? <div/> : (
+            render: function () {
 
-						<div className={"alert alert-dismissible alert-" + this.state.type } role="alert">
-							<a className="close" role="button" onClick={this.hide}>&times;</a>
-						    <strong>{this.state.message} </strong>
-						</div>
+                return !this.isVisible() ? <div/> : (
 
-					);
-				}
+                    <div className={"alert alert-dismissible alert-" + this.state.type } role="alert">
+                        <a className="close" role="button" onClick={this.hide}>&times;</a>
+                        <strong>{this.state.message} </strong>
+                    </div>
 
-			}
-		);
-	});
+                );
+            }
+
+        }
+    );
+});
 

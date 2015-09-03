@@ -1,11 +1,10 @@
 {
-  "name": "notaagil",
+  "name": "react-requirejs-bootstrap",
   "version": "1.0.0",
-  "description": "Nota Agil",
+  "description": "React/RequireJS Bootstrap",
   "main": "build.js",
   "devDependencies": {
-    "requirejs": "^2.1.15",
-    "react-tools": "^0.12.2"
+    "react-tools": "^0.13.3"
   },
   "scripts": {
     "jsx": "node ./node_modules/react-tools/bin/jsx ./jsx ./js/views/components --cache-dir ./.jsx-cache -x jsx",
@@ -15,7 +14,12 @@
   "author": "Oliver Hager",
   "license": "MIT",
   "dependencies": {
-    "react": "^0.12.2",
-    "react-router": "^0.11.6"
+    "bootstrap": "^3.3.5",
+    "jquery": "^2.1.4",
+    "q": "^1.4.1",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "requirejs": "^2.1.20",
+    "wolfy87-eventemitter": "^4.2.11"
   }
 }

@@ -1,8 +1,8 @@
-define([
-        'react',
-        'common/messagehandler'
-        ],
-    function (React, $messageHandler) {
+define(function (require) {
+
+        var React = require('react');
+        var $messageHandler = require('common/messagehandler');
+
 
         return React.createClass({
 

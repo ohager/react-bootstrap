@@ -1,5 +1,4 @@
-@import url("../lib/bootstrap/css/bootstrap.css");
-/* @import '../lib/bootstrap/css/bootstrap-theme.css'; */
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 /* Nav  */
 
 .navbar-brand {

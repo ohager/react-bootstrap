@@ -1,5 +1,6 @@
-define(['react'],
-    function (React) {
+define(function (require) {
+
+        var React = require('react');
 
         return React.createClass({
 
@@ -11,7 +12,6 @@ define(['react'],
             },
 
             render: function () {
-
 
                 return (
                     <div>

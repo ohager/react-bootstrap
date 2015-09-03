@@ -1,17 +1,13 @@
-define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], function (React, AuthService, $auth, $route) {
+define(function(require){
 
+        var React = require('react');
+        var AuthService = require('restservice/auth.service');
+        var $auth = require('common/auth');
+        var $routes = require('common/routes');
 
-        var InputField = React.createClass({
-            render: function () {
-                return (
-                    <input type={this.props.type} id={this.props.id} className="form-control input-sm chat-input" placeholder={this.props.placeholder} onChange={this.props.onChange} />
-                );
-            }
-        });
+        return React.createClass({
 
-        var credentials = { };
-
-        return {
+            credentials : { },
 
             getInitialState: function () {
                 return {login : ''};
@@ -22,16 +18,16 @@ define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], fun
             },
 
             update : function(event){
-                credentials[event.target.id] =  event.target.value ;
+                this.credentials[event.target.id] =  event.target.value ;
                 this.setState( {login : ''} );
             },
 
             login: function (event) {
                 var authService = new AuthService();
                 var that = this;
-                authService.login(credentials.username, credentials.password).then(function (token) {
+                authService.login(this.credentials.username, this.credentials.password).then(function (token) {
                     $auth.setAuthToken(token);
-                    $route.gotoStartPage();
+                    $routes.gotoStartPage();
                 }).catch(function () {
                     that.setState( {login : "Login failed"} );
                 })
@@ -55,6 +51,6 @@ define(['react', 'restservice/auth.service', 'common/auth', 'common/route'], fun
                     </form>
                 );
             }
-        };
+        });
     }
 );

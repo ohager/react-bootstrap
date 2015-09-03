@@ -1,5 +1,7 @@
-define(['common/http', 'app/config'], function($http, $config) {
+define(function(require) {
 
+    var $http = require('common/http');
+    var $config = require('app/config');
 
     function GenericService(basepath){
 

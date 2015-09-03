@@ -1,9 +1,6 @@
-define([
-        'react',
-        'common/messagehandler'
-    ],
-    function (React, $messageHandler) {
+define(function (require) {
 
+        var React = require('react');
 
         var EditorFrame = React.createClass(
             {
@@ -153,7 +150,7 @@ define([
                         <div className="row">
                             <div className="col-xs-6 col-sm-6">
                                 <EditorFrame title="Product Editor" onSave={this.onProductSave}>
-                                    <ProductEditor onChange={this.onProductDataChanged}/>
+                                    <ProductEditor/>
                                 </EditorFrame>
                             </div>
                             <div className="col-xs-6 col-sm-6">

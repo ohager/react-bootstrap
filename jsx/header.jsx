@@ -1,4 +1,7 @@
-define(['react', 'reactrouter'], function (React, Router) {
+define(function (require) {
+
+	var React = require('react');
+	var Router = require('reactrouter');
 
 	var Link = Router.Link;
 
@@ -7,9 +10,9 @@ define(['react', 'reactrouter'], function (React, Router) {
 			render: function () {
 				return (
 					<li>
-						<Link to={this.props.link}>							
+						<Link to={this.props.link}>
 							<span>&nbsp;{this.props.title}</span>
-						</Link>                          
+						</Link>
 					</li>
 				)
 			}
@@ -32,8 +35,9 @@ define(['react', 'reactrouter'], function (React, Router) {
 				<nav className="navbar navbar-fixed-top">
 					<div className="container">
 						<div className="navbar-header">
-							<button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-								aria-expanded="false" aria-controls="navbar">
+							<button type="button" className="navbar-toggle collapsed" data-toggle="collapse"
+									data-target="#navbar"
+									aria-expanded="false" aria-controls="navbar">
 								<span className="sr-only"></span>
 								<span className="icon-bar"></span>
 								<span className="icon-bar"></span>
@@ -45,24 +49,17 @@ define(['react', 'reactrouter'], function (React, Router) {
 						</div>
 						<div id="navbar" className="navbar-collapse collapse">
 							<ul className="nav navbar-nav">
-                              <li className="dropdown">
-                                <a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                                    <span className= "glyphicon glyphicon-wrench" aria-hidden="true"></span> Examples <span className="caret"></span></a>
-                                  <ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
-                                      <MenuItem link="twoway" title="2-Way Binding" />
-                                      <MenuItem link="notification" title="Notifications" />
-                                      <MenuItem link="thousands" title="Thousands" />
-									  <MenuItem link="composition" title="Composition" />
-									  <MenuItem link="decoupledcomposition" title="Decoupled Composition" />
-
-                                </ul>
-                              </li>
 								<li className="dropdown">
-									<a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-										<span className= "glyphicon glyphicon-fire" aria-hidden="true"></span> Promises <span className="caret"></span></a>
+									<a id="dropExample" href="#" className="dropdown-toggle" data-toggle="dropdown"
+									   aria-haspopup="true" role="button" aria-expanded="false">
+										<span className="glyphicon glyphicon-wrench" aria-hidden="true"></span> Examples
+										<span className="caret"></span></a>
 									<ul className="dropdown-menu" role="menu" aria-labelledby="dropExample">
-										<MenuItem link="q" title="Q" />
-										<MenuItem link="harmony" title="Native Promises" />
+										<MenuItem link="twoway" title="2-Way Binding"/>
+										<MenuItem link="notification" title="Notifications"/>
+										<MenuItem link="thousands" title="Thousands"/>
+										<MenuItem link="composition" title="Composition"/>
+										<MenuItem link="decoupledcomposition" title="Decoupled Composition"/>
 									</ul>
 								</li>
 							</ul>

@@ -1,8 +1,6 @@
-define(['react'],
-    function (React) {
+define(function (require) {
 
-
-
+        var React = require('react');
 
         return React.createClass({
 
@@ -12,24 +10,6 @@ define(['react'],
             getInitialState: function () {
                 return {rows: 50, columns: 20, randomColors: false}
             },
-
-            componentWillMount : function(){
-
-            },
-
-            componentDidMount : function(){
-
-            },
-
-            componentWillUpdate : function(){
-
-            },
-
-            componentWillUpdate : function(){
-
-            },
-
-
 
             changeRandomColors : function(event){
                 this.setState({randomColors : event.target.checked});
@@ -47,7 +27,6 @@ define(['react'],
             createRow: function (n) {
 
                 var cells = [];
-
 
                 for (var i = 0; i < n; ++i) {
                     var cell = <span key={i} className="glyphicon glyphicon-asterisk" aria-hidden="true" style={this.state.randomColors ? this.createRandomColor() : {}}></span>;
@@ -72,7 +51,6 @@ define(['react'],
 
             render: function () {
 
-
                 return (
                     <div>
                         <div className="row">
@@ -89,7 +67,7 @@ define(['react'],
                                 <input className="form-control" type="number" placeholder="Number of Columns" valueLink={this.linkState("columns")}/>
                             </div>
                             <div className="col-xs-6 col-sm-6">
-                                <div class="checkbox">
+                                <div className="checkbox">
                                     <label>
                                         <input type="checkbox" onChange={this.changeRandomColors}/>
                                     &nbsp;Randomize Colors</label>
