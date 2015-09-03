@@ -8,8 +8,6 @@ This project uses
 - event-emitter, as event system
 - q, as promise API
 - jquery, just as dependency, or if you really need it
-- jquery.inputmask, jquery plugin for input masking
-
 
 
 
@@ -31,3 +29,8 @@ To create a javscript bundle simply call ``npm run optimize``.
 If you want to make a complete deploy you may use the ``.\build.bat`` script (A Bash shell will follow someday).
 
 
+TODOs:
+- Still need a few adjustments for the release build (bootstrap does not work completely)
+- Include Flux example
+- Use gulp build chain
+- 
