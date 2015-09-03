@@ -19,19 +19,18 @@ After successfull installation just call to get all packages
 
 ``npm install``
 
+This will also install gulp and its needed dependencies.
 
 # Build
 
-For starting the jsx-watcher to build modified JSX files continuously just call ``npm run jsx-watch``.
-A single JSX run you execute with ``npm run jsx``
+For a complete build simply execute ``gulp``.
 
-To create a javscript bundle simply call ``npm run optimize``.
-If you want to make a complete deploy you may use the ``.\build.bat`` script (A Bash shell will follow someday).
+During development you will need the JSX transpiler. Calling ```gulp watch`` will run the jsx watcher, which allows automatic transpilation of your jsx files.
 
 
 TODOs:
-- Still need a few adjustments for the release build (bootstrap does not work completely)
+- Still need a few adjustments
+- Improve the http module considering better decoupling the authentication mechanism
 - Include Flux example
-- Use gulp build chain
 
 
