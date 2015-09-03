@@ -5,8 +5,9 @@ var sequence = require('run-sequence');
 
 gulp.task('clean:jsx', function () {
     return del([
-        '.jsx-cache',
-        './js/views/components'
+        '.jsx-cache/**/*',
+        './js/views/components',
+        'release-build/**/*'
     ])
 });
 
@@ -15,7 +16,7 @@ gulp.task('build:jsx', function () {
 });
 
 gulp.task('build:r-optimize', function () {
-    return run('npm run optimize').exec();
+    return run('npm run optimize',{silent:true, verbosity:3}).exec();
 });
 
 gulp.task('clean:post-build', function () {
@@ -25,7 +26,7 @@ gulp.task('clean:post-build', function () {
         'release-build/*.*',
         '!release-build/*.html',
         'release-build/node_modules/**/*',
-        'release-build/node_modules/bootstrap/*',
+        'release-build/node_modules/bootstrap/*.*',
         '!release-build/node_modules/bootstrap/**',
         '!release-build/node_modules/bootstrap/dist/**'
     ]);

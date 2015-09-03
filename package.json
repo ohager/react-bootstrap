@@ -7,8 +7,8 @@
     "del": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-run": "^1.6.10",
-    "gulp-run-sequence": "^0.3.2",
-    "react-tools": "^0.13.3"
+    "react-tools": "^0.13.3",
+    "run-sequence": "^1.1.2"
   },
   "scripts": {
     "jsx": "node ./node_modules/react-tools/bin/jsx ./jsx ./js/views/components --cache-dir ./.jsx-cache -x jsx",
