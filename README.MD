@@ -7,6 +7,7 @@ This project uses
 - react-router , for React-based routing
 - event-emitter, as event system
 - q, as promise API
+- bootstrap as css framework
 - jquery, just as dependency, or if you really need it
 
 
