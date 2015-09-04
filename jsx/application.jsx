@@ -10,7 +10,7 @@ define(function (require) {
     var ThousandsExampleCanvas = require('component/canvas/thousands.example.canvas');
     var CompositionExampleCanvas = require('component/canvas/composition.example.canvas');
     var DecoupledCompositionExampleCanvas = require('component/canvas/decoupledcomposition.example.canvas');
-
+    var RefluxExampleCanvas = require('component/canvas/reflux.example.canvas');
     var RouteHandler = Router.RouteHandler;
     var Route = Router.Route;
     var DefaultRoute = Router.DefaultRoute;
@@ -49,6 +49,7 @@ define(function (require) {
             <Route name='composition' path='example/composition' handler={CompositionExampleCanvas}/>
             <Route name='decoupledcomposition' path='example/composition/decoupled'
                    handler={DecoupledCompositionExampleCanvas}/>
+            <Route name='reflux' path='example/reflux' handler={RefluxExampleCanvas}/>
             <DefaultRoute handler={TwoWayExampleCanvas}/>
         </Route>
     );

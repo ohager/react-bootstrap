@@ -60,6 +60,7 @@ define(function (require) {
 										<MenuItem link="thousands" title="Thousands"/>
 										<MenuItem link="composition" title="Composition"/>
 										<MenuItem link="decoupledcomposition" title="Decoupled Composition"/>
+                                        <MenuItem link="reflux" title="Reflux"/>
 									</ul>
 								</li>
 							</ul>

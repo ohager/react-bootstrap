@@ -15,7 +15,8 @@
         component: 'js/views/components',
         common: 'js/app/common',
         eventemitter: 'node_modules/wolfy87-eventemitter/EventEmitter.min',
-        jquery: 'node_modules/jquery/dist/jquery.min'
+        jquery: 'node_modules/jquery/dist/jquery.min',
+        reflux : 'js/lib/reflux'
     },
     shim: {
         'bootstrap': {
@@ -38,6 +39,7 @@
                 'jquery',
                 'bootstrap',
                 'react',
+                'reflux',
                 'q',
                 'common/http',
                 'common/messagehandler',
