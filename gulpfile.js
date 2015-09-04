@@ -12,7 +12,7 @@ gulp.task('clean:jsx', function () {
 });
 
 gulp.task('build:jsx', function () {
-    return run('npm run jsx').exec();
+    return run('npm run jsx',{silent:true, verbosity:3}).exec();
 });
 
 gulp.task('build:r-optimize', function () {

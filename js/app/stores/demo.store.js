@@ -10,12 +10,17 @@ define(function (require) {
 
         onAddItem: function (obj) {
             this.items.push(obj);
-            this.trigger(this.items);
+            this.update();
         },
 
-        onRemoveItem: function (obj) {
-            console.log('remove: ' + JSON.stringify(obj));
-        }
+        onRemoveItem: function (index) {
+            this.items.splice(index, 1);
+            this.update();
+        },
+
+        update : function(){
+            this.trigger(this.items);
+        },
     });
 
 });
